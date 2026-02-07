@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner</title>
+
+   <!-- ================= STYLES ================= -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="app-header">
+
+    <div class="header-text">
+        <h1>📘 AI Study Planner</h1>
+        <p>Personalized scheduling for engineering students</p>
+    </div>
+
+    <button id="themeToggle" class="theme-btn">
+        🌗
+    </button>
+
+</header>
+
+
+
+<!-- ================= MAIN APP ================= -->
+
+<main class="app-container">
+
+<form id="plannerForm">
+
+    <!-- ========= STUDENT DETAILS ========= -->
+
+    <section class="card">
+
+        <h2>Student Details</h2>
+
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>College Name</label>
+        <input type="text">
+
+        <label>Branch</label>
+        <input type="text">
+
+        <label>Graduation Year</label>
+        <input type="number">
+
+        <label>Email</label>
+        <input type="email">
+
+    </section>
+
+
+    <!-- ========= STUDY AVAILABILITY ========= -->
+
+    <section class="card">
+
+        <h2>Study Availability</h2>
+
+        <label>Weekday Study Hours</label>
+        <input type="number" id="weekdayHours" min="1">
+
+        <label>Weekend Study Hours</label>
+        <input type="number" id="weekendHours" min="1">
+
+        <label>Preferred Study Time</label>
+        <select id="preferredTime">
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Night</option>
+        </select>
+
+        <label>Target Completion Date</label>
+        <input type="date" id="targetDate">
+
+    </section>
+
+
+    <!-- ========= SUBJECTS ========= -->
+
+    <section class="card">
+
+        <h2>Subjects</h2>
+
+        <div id="subjectsContainer"></div>
+
+        <button type="button" onclick="addSubject()" class="add-btn">
+            ➕ Add Subject
+        </button>
+
+    </section>
+
+
+    <!-- ========= SUBMIT ========= -->
+
+    <button type="submit" class="generateBtn">
+        🚀 Generate Study Plan
+    </button>
+
+</form>
+
+
+<!-- ========= OUTPUT ========= -->
+
+<section id="output" class="card output-card">
+
+    <h2>Planner Output</h2>
+    <p>Your personalized study plan will appear here.</p>
+
+</section>
+
+</main>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="app-footer">
+    © 2026 AI Study Planner • By Neev Savla
+</footer>
+
+</body>
+</html>

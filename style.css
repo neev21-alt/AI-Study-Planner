@@ -1,0 +1,493 @@
+/* =================================
+   MODERN THEME SYSTEM
+================================= */
+
+:root {
+
+--bg: #0b1120;
+--card: #111827;
+--card-soft: #1f2937;
+--border: #2d3748;
+--text: #e5e7eb;
+--accent: #60a5fa;
+--accent-soft: #1d4ed8;
+
+--shadow:
+0 10px 30px rgba(0,0,0,0.35);
+
+}
+
+.light-mode {
+
+--bg: #f4f6fb;
+--card: #ffffff;
+--card-soft: #eef2ff;
+--border: #dbe2f1;
+--text: #111827;
+--accent: #2563eb;
+--accent-soft: #1e40af;
+
+--shadow:
+0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+/* =================================
+   GLOBAL
+================================= */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "Inter", system-ui, sans-serif;
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
+transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.app-header {
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+padding: 22px 28px;
+
+background: linear-gradient(
+135deg,
+var(--card),
+var(--card-soft)
+);
+
+border-bottom: 1px solid var(--border);
+box-shadow: var(--shadow);
+}
+
+.header-text {
+text-align: center;
+flex: 1;
+}
+
+.header-text h1 {
+font-size: 26px;
+font-weight: 700;
+}
+
+.header-text p {
+opacity: 0.7;
+margin-top: 4px;
+}
+
+
+/* Theme button */
+
+.theme-btn {
+
+background: var(--accent);
+color: white;
+
+padding: 10px 14px;
+
+border-radius: 999px;
+font-weight: 600;
+
+transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+background: var(--accent-soft);
+transform: scale(1.05);
+}
+
+
+/* =================================
+   LAYOUT
+================================= */
+
+main {
+max-width: 1100px;
+margin: auto;
+padding: 30px 20px;
+}
+
+
+/* =================================
+   CARDS
+================================= */
+
+.card {
+
+background: var(--card);
+
+border: 1px solid var(--border);
+border-radius: 14px;
+
+padding: 22px;
+margin-bottom: 20px;
+
+box-shadow: var(--shadow);
+
+transition: transform 0.2s ease;
+}
+
+.card:hover {
+transform: translateY(-2px);
+}
+
+.card h2 {
+margin-bottom: 14px;
+font-size: 18px;
+color: var(--accent);
+}
+
+
+/* =================================
+   INPUTS
+================================= */
+
+input, select {
+
+width: 100%;
+
+padding: 11px 12px;
+margin-bottom: 12px;
+
+border-radius: 8px;
+border: 1px solid var(--border);
+
+background: var(--card-soft);
+color: var(--text);
+
+transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+
+outline: none;
+
+border-color: var(--accent);
+box-shadow: 0 0 0 2px rgba(96,165,250,0.25);
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
+
+button {
+
+cursor: pointer;
+border: none;
+
+font-weight: 600;
+
+transition: all 0.2s ease;
+}
+
+button:hover {
+opacity: 0.9;
+}
+
+.generateBtn {
+
+width: 100%;
+
+padding: 14px;
+
+margin-bottom: 10px;
+
+background: linear-gradient(
+135deg,
+var(--accent),
+var(--accent-soft)
+);
+
+color: white;
+
+border-radius: 12px;
+font-size: 16px;
+
+box-shadow: var(--shadow);
+}
+
+.generateBtn:hover {
+transform: translateY(-1px);
+}
+
+
+/* =================================
+   SUBJECT CARD
+================================= */
+
+.subjectRow {
+
+background: var(--card-soft);
+
+padding: 16px;
+
+border-radius: 12px;
+border: 1px solid var(--border);
+
+margin-bottom: 14px;
+}
+
+
+/* =============================
+   ADD SUBJECT BUTTON
+============================= */
+
+.add-btn {
+
+display: inline-flex;
+align-items: center;
+gap: 8px;
+
+padding: 10px 14px;
+
+background: var(--card-soft);
+color: var(--text);
+
+border: 1px solid var(--border);
+border-radius: 10px;
+
+font-size: 14px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+
+background: var(--accent);
+color: white;
+
+transform: translateY(-1px);
+}
+
+
+/* =================================
+   OUTPUT
+================================= */
+
+#output {
+
+background: var(--card);
+
+padding: 24px;
+
+border-radius: 14px;
+border: 1px solid var(--border);
+
+box-shadow: var(--shadow);
+
+margin-top: 10px;
+}
+
+#output h2 {
+color: var(--accent);
+margin-bottom: 10px;
+}
+
+
+/* =================================
+   WEEKLY PLANNER
+================================= */
+
+.plannerGrid {
+
+display: grid;
+
+grid-template-columns:
+repeat(auto-fit, minmax(160px, 1fr));
+
+gap: 12px;
+
+margin-top: 16px;
+}
+
+.dayCard {
+
+background: var(--card-soft);
+
+padding: 14px;
+
+border-radius: 10px;
+border: 1px solid var(--border);
+
+transition: transform 0.2s ease;
+}
+
+.dayCard:hover {
+transform: translateY(-2px);
+}
+
+.dayCard h3 {
+margin-bottom: 6px;
+font-size: 14px;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+.header-text h1 {
+font-size: 20px;
+}
+
+main {
+padding: 20px 14px;
+}
+
+.card {
+padding: 16px;
+}
+
+}
+
+
+/* =============================
+   DASHBOARD OUTPUT STYLING
+============================= */
+
+#output ul {
+list-style: none;        
+margin-left: 0;
+padding-left: 0;
+}
+
+#output li {
+margin-bottom: 6px;
+padding: 6px 0;
+border-bottom: 1px solid var(--border);
+}
+
+.deadline-box {
+background: var(--card-soft);
+padding: 14px;
+border-radius: 10px;
+border-left: 5px solid var(--accent);
+margin-bottom: 18px;
+}
+
+.insight-box {
+background: var(--card-soft);
+padding: 12px;
+border-radius: 8px;
+margin-bottom: 8px;
+border: 1px solid var(--border);
+}
+
+
+/* =============================
+   FOOTER
+============================= */
+
+.app-footer {
+
+text-align: center;
+
+padding: 18px;
+
+margin-top: 40px;
+
+font-size: 14px;
+
+opacity: 0.7;
+
+border-top: 1px solid var(--border);
+
+background: var(--card-soft);
+
+}
+
+
+/* =============================
+   CHART DASHBOARD — MODERN (FIXED)
+============================= */
+
+#output h2 {
+margin-top: 28px;
+margin-bottom: 12px;
+}
+
+canvas {
+
+display: block;
+
+width: 100% !important;
+height: 450px !important;
+
+background: var(--card-soft);
+
+border-radius: 12px;
+border: 1px solid var(--border);
+
+padding: 24px;
+
+box-shadow:
+0 6px 16px rgba(0,0,0,0.25);
+
+margin: 14px 0 26px 0;
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+
+}
+
+canvas:hover {
+
+transform: translateY(-2px);
+
+box-shadow:
+0 10px 24px rgba(0,0,0,0.35);
+
+}
+
+body:not(.light-mode) canvas {
+
+background: #1a2332;
+
+box-shadow:
+0 0 0 1px rgba(96,165,250,0.15),
+0 8px 22px rgba(0,0,0,0.45);
+
+}
+
+.light-mode canvas {
+
+background: #f8faff;
+
+box-shadow:
+0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+@media (max-width: 600px) {
+
+canvas {
+
+height: 300px !important;
+padding: 16px;
+min-width: 0;
+
+}
+
+}
